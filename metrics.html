@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quality Metrics — QualityPulse Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="index.html"><span
+                    class="brand-mark">Q</span><span>QualityPulse<small>STUDIO</small></span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="index.html" data-page="index.html">Home</a><a href="analyzer.html"
+                    data-page="analyzer.html">Code Analyzer</a><a href="issues.html"
+                    data-page="issues.html">Issues</a><a href="metrics.html" data-page="metrics.html">Metrics</a><a
+                    href="security.html" data-page="security.html">Security</a><a href="activity.html"
+                    data-page="activity.html">Activity</a>
+            </nav><a class="btn btn-primary btn-small nav-cta" href="analyzer.html">Run an analysis ↗</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-heading"><span class="eyebrow">PROJECT INSIGHTS</span>
+            <h1>Quality <span class="gradient-text">Metrics</span></h1>
+            <p>Understand project health with a quick overview of quality indicators.</p>
+        </section>
+        <section class="page-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top">Quality score <span class="stat-symbol">✧</span></div>
+                    <div class="stat-number">92<span class="muted" style="font-size:15px">/100</span></div>
+                    <div class="stat-foot">↑ 4 points this cycle</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Maintainability <span class="stat-symbol">◇</span></div>
+                    <div class="stat-number">88<span class="muted" style="font-size:15px">%</span></div>
+                    <div class="muted small">Healthy range</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Test coverage <span class="stat-symbol">▦</span></div>
+                    <div class="stat-number">76<span class="muted" style="font-size:15px">%</span></div>
+                    <div class="muted small">Room to improve</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Open issues <span class="stat-symbol">◈</span></div>
+                    <div class="stat-number" id="metricOpenIssues">5</div>
+                    <div class="muted small">From issue tracker</div>
+                </div>
+            </div>
+            <div class="grid-3" style="grid-template-columns:1.2fr 1fr 1fr">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Quality trend</h2><span class="pill pill-low">+4.2%</span>
+                    </div>
+                    <div class="bar-chart" aria-label="Sample quality trend chart">
+                        <div class="bar-group">
+                            <div class="bar" style="height:54%"></div><span class="bar-label">May</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height:63%"></div><span class="bar-label">Jun</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height:58%"></div><span class="bar-label">Jul</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height:73%"></div><span class="bar-label">Aug</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height:82%"></div><span class="bar-label">Sep</span>
+                        </div>
+                        <div class="bar-group">
+                            <div class="bar" style="height:92%"></div><span class="bar-label">Oct</span>
+                        </div>
+                    </div>
+                    <p class="form-note">Illustrative demo data, not a real repository scan.</p>
+                </div>
+                <div class="panel">
+                    <h2>Quality breakdown</h2>
+                    <div class="metric-row"><span class="small">Code clarity</span><strong class="small">94%</strong>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width:94%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-row"><span class="small">Maintainability</span><strong class="small">88%</strong>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width:88%"></div>
+                        </div>
+                    </div>
+                    <div class="metric-row"><span class="small">Test coverage</span><strong class="small">76%</strong>
+                        <div class="progress-track">
+                            <div class="progress-fill" style="width:76%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel">
+                    <h2>Recommended focus</h2>
+                    <div class="check-row"><span class="status-ok">✓</span>
+                        <div><strong>Resolve high severity issues</strong>
+                            <p>Address critical findings first.</p>
+                        </div>
+                    </div>
+                    <div class="check-row"><span style="color:var(--yellow)">◷</span>
+                        <div><strong>Expand test coverage</strong>
+                            <p>Add tests around core flows.</p>
+                        </div>
+                    </div>
+                    <div class="check-row"><span style="color:var(--blue)">↗</span>
+                        <div><strong>Review dependencies</strong>
+                            <p>Keep packages up to date.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>© <span id="year"></span> QualityPulse Studio. Built for better
+                code.</span><span>Clarity in every commit · Quality in every release</span></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

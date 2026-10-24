@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security Checks — QualityPulse Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="index.html"><span
+                    class="brand-mark">Q</span><span>QualityPulse<small>STUDIO</small></span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="index.html" data-page="index.html">Home</a><a href="analyzer.html"
+                    data-page="analyzer.html">Code Analyzer</a><a href="issues.html"
+                    data-page="issues.html">Issues</a><a href="metrics.html" data-page="metrics.html">Metrics</a><a
+                    href="security.html" data-page="security.html">Security</a><a href="activity.html"
+                    data-page="activity.html">Activity</a>
+            </nav><a class="btn btn-primary btn-small nav-cta" href="analyzer.html">Run an analysis ↗</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-heading"><span class="eyebrow">SAFETY REVIEW</span>
+            <h1>Security <span class="gradient-text">Checks</span></h1>
+            <p>Use this checklist to record review progress before your next release.</p>
+        </section>
+        <section class="page-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top">Checklist progress <span class="stat-symbol">✓</span></div>
+                    <div class="stat-number"><span id="securityPercent">0</span><span class="muted"
+                            style="font-size:15px">%</span></div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="securityProgress" style="width:0%"></div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Checks complete <span class="stat-symbol">◈</span></div>
+                    <div class="stat-number" id="securityDone">0/6</div>
+                    <div class="muted small">Saved in this browser</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Review status <span class="stat-symbol">●</span></div>
+                    <div class="stat-number" id="securityStatus" style="font-size:22px">In progress</div>
+                    <div class="muted small">Checklist only</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Scope <span class="stat-symbol">◇</span></div>
+                    <div class="stat-number" style="font-size:22px">Manual</div>
+                    <div class="muted small">Human review required</div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>Release security checklist</h2><span class="muted small">Tick each item after verifying
+                            it</span>
+                    </div><button class="btn btn-secondary btn-small" id="resetSecurity">Reset checklist</button>
+                </div>
+                <div id="securityChecklist">
+                    <label class="check-row"><input type="checkbox" data-security="secrets"><span><strong>No secrets
+                                committed to source control</strong>
+                            <p>Confirm API keys and credentials are kept outside the repository.</p>
+                        </span></label>
+                    <label class="check-row"><input type="checkbox" data-security="validation"><span><strong>Input
+                                validation is in place</strong>
+                            <p>Validate and normalize untrusted user input.</p>
+                        </span></label>
+                    <label class="check-row"><input type="checkbox"
+                            data-security="dependencies"><span><strong>Dependencies reviewed</strong>
+                            <p>Check package versions and known vulnerabilities.</p>
+                        </span></label>
+                    <label class="check-row"><input type="checkbox" data-security="auth"><span><strong>Authentication
+                                and permissions reviewed</strong>
+                            <p>Ensure users can access only permitted resources.</p>
+                        </span></label>
+                    <label class="check-row"><input type="checkbox" data-security="errors"><span><strong>Error messages
+                                do not expose sensitive data</strong>
+                            <p>Avoid leaking tokens, internal paths, or private details.</p>
+                        </span></label>
+                    <label class="check-row"><input type="checkbox" data-security="https"><span><strong>HTTPS and secure
+                                configuration checked</strong>
+                            <p>Review transport security and production settings.</p>
+                        </span></label>
+                </div>
+                <p class="form-note">This is a planning checklist, not an automated security audit or a guarantee that
+                    an application is secure.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>© <span id="year"></span> QualityPulse Studio. Built for better
+                code.</span><span>Clarity in every commit · Quality in every release</span></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

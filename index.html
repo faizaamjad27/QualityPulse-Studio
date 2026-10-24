@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="QualityPulse Studio helps teams inspect code quality, track issues, and review project health.">
+    <title>QualityPulse Studio — Code quality, in focus</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="index.html"><span
+                    class="brand-mark">Q</span><span>QualityPulse<small>STUDIO</small></span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="index.html" data-page="index.html">Home</a><a href="analyzer.html"
+                    data-page="analyzer.html">Code Analyzer</a><a href="issues.html"
+                    data-page="issues.html">Issues</a><a href="metrics.html" data-page="metrics.html">Metrics</a><a
+                    href="security.html" data-page="security.html">Security</a><a href="activity.html"
+                    data-page="activity.html">Activity</a>
+            </nav><a class="btn btn-primary btn-small nav-cta" href="analyzer.html">Run an analysis ↗</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="container hero">
+            <div>
+                <span class="eyebrow"><span class="pulse-dot"></span> YOUR CODE. CLEARER.</span>
+                <h1>Ship better code.<br><span class="gradient-text">With confidence.</span></h1>
+                <p>One focused workspace to inspect code, track issues, understand quality metrics, and keep your
+                    projects moving in the right direction.</p>
+                <div class="hero-actions"><a class="btn btn-primary" href="analyzer.html">✦ Analyze your code</a><a
+                        class="btn btn-secondary" href="metrics.html">Explore dashboard ↗</a></div>
+                <div class="trust-line"><span class="status-ok">●</span> <strong>Quality first</strong> <span>·</span>
+                    Fast insights <span>·</span> Developer friendly</div>
+            </div>
+            <div class="code-card">
+                <div class="window-bar"><i class="window-dot"></i><i class="window-dot"></i><i
+                        class="window-dot"></i><span class="window-name">quality-check.js</span></div>
+                <div class="code-body"><span class="code-purple">const</span> project = {<br> name: <span
+                        class="code-green">'your-next-big-thing'</span>,<br> quality: <span
+                        class="code-cyan">100</span>,<br> bugs: <span class="code-cyan">0</span>,<br> confidence: <span
+                        class="code-green">'high'</span><br>};<br><br><span class="code-purple">function</span> <span
+                        class="code-yellow">shipWithConfidence</span>(code) {<br> <span
+                        class="code-purple">return</span> code.review()<br> .then(qualityCheck)<br>
+                    .then(deploySafely);<br>}</div>
+                <div class="scan-status"><span>✓ Code health check complete</span><span class="status-ok">All systems
+                        ready</span></div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="section-heading"><span class="eyebrow">THE TOOLKIT</span>
+                    <h2>Quality isn't a guess.</h2>
+                    <p>Get a clearer picture of your codebase with a simple set of tools built around your workflow.</p>
+                </div>
+                <div class="grid-3">
+                    <article class="feature-card">
+                        <div class="feature-icon">⌘</div>
+                        <h3>Code Analyzer</h3>
+                        <p>Run a quick client-side review for common code patterns and potential problems.</p><a
+                            class="mini-link" href="analyzer.html">Analyze code →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">◈</div>
+                        <h3>Issue Tracking</h3>
+                        <p>Review sample findings, filter by severity, and mark resolved items as you work.</p><a
+                            class="mini-link" href="issues.html">View issues →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">▥</div>
+                        <h3>Quality Metrics</h3>
+                        <p>See your project health at a glance through clear scores and visual summaries.</p><a
+                            class="mini-link" href="metrics.html">Explore metrics →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">♢</div>
+                        <h3>Security Checks</h3>
+                        <p>Use a lightweight checklist to track important security review steps.</p><a class="mini-link"
+                            href="security.html">Review security →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">◷</div>
+                        <h3>Activity History</h3>
+                        <p>Keep a local activity timeline of actions taken in this demo workspace.</p><a
+                            class="mini-link" href="activity.html">See activity →</a>
+                    </article>
+                    <article class="feature-card">
+                        <div class="feature-icon">✧</div>
+                        <h3>Built for focus</h3>
+                        <p>A clean interface keeps important information visible without adding noise.</p><a
+                            class="mini-link" href="analyzer.html">Get started →</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="cta">
+                    <div>
+                        <h2>Make your next release your best one.</h2>
+                        <p>Start with a quick code scan and turn findings into clear next steps.</p>
+                    </div><a class="btn btn-primary" href="analyzer.html">Start analyzing ↗</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>© <span id="year"></span> QualityPulse Studio. Built for better
+                code.</span><span>Clarity in every commit · Quality in every release</span></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

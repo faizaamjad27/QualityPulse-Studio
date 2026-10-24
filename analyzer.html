@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Analyzer — QualityPulse Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="index.html"><span
+                    class="brand-mark">Q</span><span>QualityPulse<small>STUDIO</small></span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="index.html" data-page="index.html">Home</a><a href="analyzer.html"
+                    data-page="analyzer.html">Code Analyzer</a><a href="issues.html"
+                    data-page="issues.html">Issues</a><a href="metrics.html" data-page="metrics.html">Metrics</a><a
+                    href="security.html" data-page="security.html">Security</a><a href="activity.html"
+                    data-page="activity.html">Activity</a>
+            </nav><a class="btn btn-primary btn-small nav-cta" href="analyzer.html">Run an analysis ↗</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-heading"><span class="eyebrow">DEVELOPER TOOL</span>
+            <h1>Code <span class="gradient-text">Analyzer</span></h1>
+            <p>Paste a snippet and run a lightweight browser-based check for common code quality signals.</p>
+        </section>
+        <section class="page-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top">Scans this session <span class="stat-symbol">⌘</span></div>
+                    <div class="stat-number" id="scanCount">0</div>
+                    <div class="stat-foot">Local session</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Last score <span class="stat-symbol">✧</span></div>
+                    <div class="stat-number" id="lastScore">—</div>
+                    <div class="stat-foot">Based on demo rules</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Findings <span class="stat-symbol">◈</span></div>
+                    <div class="stat-number" id="findingCount">0</div>
+                    <div class="stat-foot">From your latest scan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Mode <span class="stat-symbol">●</span></div>
+                    <div class="stat-number" style="font-size:22px">Local</div>
+                    <div class="muted small">No upload required</div>
+                </div>
+            </div>
+            <div class="analyzer-grid">
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Code input</h2><button class="btn btn-secondary btn-small" id="loadSample">Load
+                            sample</button>
+                    </div><label class="small muted" for="codeInput">Paste HTML, CSS, JavaScript, or another text-based
+                        snippet</label><textarea class="editor" id="codeInput" spellcheck="false"
+                        placeholder="// Paste your code here..."></textarea>
+                    <div class="toolbar" style="margin-top:13px"><select class="select-field" id="codeLanguage"
+                            aria-label="Code language">
+                            <option value="auto">Auto detect</option>
+                            <option value="javascript">JavaScript</option>
+                            <option value="html">HTML</option>
+                            <option value="css">CSS</option>
+                        </select><button class="btn btn-primary" id="runAnalysis">▶ Run analysis</button><button
+                            class="btn btn-secondary" id="clearCode">Clear</button></div>
+                    <p class="form-note">Demo analyzer only: it checks simple patterns, not full syntax or production
+                        security.</p>
+                </div>
+                <div class="panel">
+                    <div class="panel-header">
+                        <h2>Analysis results</h2><span class="pill pill-low" id="resultStatus">Ready</span>
+                    </div>
+                    <div class="result-box" id="analysisResults">
+                        <div class="empty-state">Your results will appear here after you run an analysis.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>© <span id="year"></span> QualityPulse Studio. Built for better
+                code.</span><span>Clarity in every commit · Quality in every release</span></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>

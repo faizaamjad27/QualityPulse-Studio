@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues — QualityPulse Studio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="container nav">
+            <a class="brand" href="index.html"><span
+                    class="brand-mark">Q</span><span>QualityPulse<small>STUDIO</small></span></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+            <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+                <a href="index.html" data-page="index.html">Home</a><a href="analyzer.html"
+                    data-page="analyzer.html">Code Analyzer</a><a href="issues.html"
+                    data-page="issues.html">Issues</a><a href="metrics.html" data-page="metrics.html">Metrics</a><a
+                    href="security.html" data-page="security.html">Security</a><a href="activity.html"
+                    data-page="activity.html">Activity</a>
+            </nav><a class="btn btn-primary btn-small nav-cta" href="analyzer.html">Run an analysis ↗</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-heading"><span class="eyebrow">PROJECT WORKSPACE</span>
+            <h1>Issue <span class="gradient-text">Tracker</span></h1>
+            <p>Prioritize what matters. Filter findings and track items through to resolution.</p>
+        </section>
+        <section class="page-content">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-top">Total issues <span class="stat-symbol">◈</span></div>
+                    <div class="stat-number" id="totalIssues">6</div>
+                    <div class="muted small">Tracked in this demo</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">High priority <span class="stat-symbol">↑</span></div>
+                    <div class="stat-number" id="highIssues">2</div>
+                    <div class="muted small">Needs attention</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Resolved <span class="stat-symbol">✓</span></div>
+                    <div class="stat-number" id="resolvedIssues">1</div>
+                    <div class="stat-foot">Progress is saved locally</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-top">Open items <span class="stat-symbol">○</span></div>
+                    <div class="stat-number" id="openIssues">5</div>
+                    <div class="muted small">Ready for review</div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-header">
+                    <div>
+                        <h2>All issues</h2><span class="muted small">Search and filter the issue list</span>
+                    </div>
+                    <div class="toolbar"><input class="field" id="issueSearch" placeholder="Search issues..."
+                            aria-label="Search issues"><select class="select-field" id="issueFilter"
+                            aria-label="Filter by severity">
+                            <option value="all">All severity</option>
+                            <option value="high">High</option>
+                            <option value="medium">Medium</option>
+                            <option value="low">Low</option>
+                        </select><select class="select-field" id="issueStatusFilter" aria-label="Filter by status">
+                            <option value="all">All status</option>
+                            <option value="open">Open</option>
+                            <option value="resolved">Resolved</option>
+                        </select></div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Issue</th>
+                                <th>Severity</th>
+                                <th>File</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody id="issuesTableBody"></tbody>
+                    </table>
+                </div>
+                <div class="empty-state" id="issuesEmpty" hidden>No issues match these filters.</div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container footer-inner"><span>© <span id="year"></span> QualityPulse Studio. Built for better
+                code.</span><span>Clarity in every commit · Quality in every release</span></div>
+    </footer>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="script.js"></script>
+</body>
+
+</html>
